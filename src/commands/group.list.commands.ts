@@ -235,9 +235,9 @@ const groupCommands = {
     link: {
         guide: `Ex: *{$p}link* - Exibe o link do grupo.\n`,
         msgs: {
-            reply: "🔗 *Link do grupo*\n\n"+
-            "*Nome do grupo*: {$1}\n"+
-            "*Link do grupo*: {$2}"
+            reply: ""+
+            ""+
+            "{$2}"
         },
         function: groupFunctions.linkCommand
     },

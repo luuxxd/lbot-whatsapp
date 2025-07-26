@@ -96,26 +96,28 @@ export const utilityMenu = (botInfo : Bot)=>{
 
 < > Se quiser informações sobre algum comando, use ${prefix}comando guia
 
+؄؄؄؄؄؄؄؄؄؄؄؄؄
+
 〆 *UTILITÁRIOS* 〆
 
 ؄؄؄؄؄؄؄؄؄؄؄؄؄
 
 ➲ CONSULTAS/TEXTO
 
-〆 ${prefix}steamverde jogo - Pesquisa de jogos "alternativos"
+〆 ${prefix}steamverde (jogo) - Pesquisa de jogos "alternativos"
 〆 ${prefix}brasileirao - Tabela do Brasileirão
 〆 ${prefix}animes - Últimos lançamentos de animes
 〆 ${prefix}mangas - Últimos lançamentos de mangás
 〆 ${prefix}filmes - Tendências atuais de filmes
 〆 ${prefix}series - Tendências atuais de séries
-〆 ${prefix}encurtar link - Encurtador de link
-〆 ${prefix}letra musica - Letra de música
-〆 ${prefix}traduz idioma texto - Tradutor de texto
-〆 ${prefix}pesquisa texto - Pesquisa do Google
-〆 ${prefix}clima cidade - Previsão do tempo
+〆 ${prefix}encurtar (link) - Encurtador de link
+〆 ${prefix}letra (música) - Letra de música
+〆 ${prefix}traduz (idioma texto) - Tradutor de texto
+〆 ${prefix}pesquisa (texto) - Pesquisa do Google
+〆 ${prefix}clima (cidade) - Previsão do tempo
 〆 ${prefix}noticias - Notícias atuais
-〆 ${prefix}moeda tipo valor - Conversor de moeda
-〆 ${prefix}calc expressao - Calculadora
+〆 ${prefix}moeda (tipo valor) - Conversor de moeda
+〆 ${prefix}calc (expressao) - Calculadora
 〆 ${prefix}ddd - Informação do DDD
 〆 ${prefix}tabela - Tabela de caracteres
 
@@ -123,7 +125,7 @@ export const utilityMenu = (botInfo : Bot)=>{
 
 〆 ${prefix}ouvir - Áudio para texto
 〆 ${prefix}audio - Extrai áudio de um video
-〆 ${prefix}efeitoaudio tipo - Adiciona efeito no áudio
+〆 ${prefix}efeitoaudio (tipo) - Adiciona efeito no áudio
 〆 ${prefix}voz pt texto - Texto para áudio
 
 ➲ IMAGENS
@@ -145,15 +147,17 @@ export const groupMenu = (botInfo : Bot) =>{
 
 < > Se quiser informações sobre algum comando, use ${prefix}comando guia
 
+؄؄؄؄؄؄؄؄؄؄؄؄؄
+
 〆 *GRUPO* 〆
 
 ؄؄؄؄؄؄؄؄؄؄؄؄؄
 
 ➲ GERAL
 
-〆 *${prefix}grupo* - Dados do grupo
-〆 *${prefix}adms* - Lista de administradores
-〆 *${prefix}dono* - Dono do grupo
+〆 ${prefix}grupo - Dados do grupo
+〆 ${prefix}adms - Lista de administradores
+〆 ${prefix}dono - Dono do grupo
 `
 }
 
@@ -164,6 +168,8 @@ export const groupAdminMenu = (botInfo : Bot)=>{
 
 < > Se quiser informações sobre algum comando, use ${prefix}comando guia
 
+؄؄؄؄؄؄؄؄؄؄؄؄؄
+
 〆 *GRUPO* 〆
 
 ؄؄؄؄؄؄؄؄؄؄؄؄؄
@@ -173,15 +179,15 @@ export const groupAdminMenu = (botInfo : Bot)=>{
 〆 ${prefix}grupo - Dados do grupo
 〆 ${prefix}adms - Lista de administradores
 〆 ${prefix}fotogrupo - Altera foto do grupo
-〆 ${prefix}mt texto - Marca membros/admins com uma mensagem
-〆 ${prefix}mm texto - Marca membros com uma mensagem
+〆 ${prefix}mt (texto) - Marca membros/admins com uma mensagem
+〆 ${prefix}mm (texto) - Marca membros com uma mensagem
 〆 ${prefix}dono - Dono do grupo
 
 ➲ MEMBROS
 
 〆 ${prefix}membro (@membro) - Mostra os dados do membro
 〆 ${prefix}topativos - Marca os 10 membros mais ativos
-〆 ${prefix}inativos numero - Marca os membros com menos de um determinado número de mensagens
+〆 ${prefix}inativos (número) - Marca os membros com menos de um determinado número de mensagens
 
 ➲ ADMINISTRAÇÃO
 
@@ -196,6 +202,8 @@ export const groupAdminMenu = (botInfo : Bot)=>{
 〆 ${prefix}link - Link do grupo
 〆 ${prefix}rlink - Redefine o link do grupo
 〆 ${prefix}apg - Apaga mensagem
+
+؄؄؄؄؄؄؄؄؄؄؄؄؄
 
 〆 *RECURSOS* 〆 
 
@@ -233,13 +241,13 @@ export const groupAdminMenu = (botInfo : Bot)=>{
 
 〆 ${prefix}autoresp - Ativa/desativa as respostas automáticas
 〆 ${prefix}respostas - Exibe as respostas configuradas
-〆 ${prefix}addresp palavra resposta - Adiciona uma resposta a palavra
-〆 ${prefix}rmresp palavra - Remove a resposta para essa palavra
+〆 ${prefix}addresp (palavra resposta) - Adiciona uma resposta a palavra
+〆 ${prefix}rmresp (palavra) - Remove a resposta para essa palavra
 
 ➲ BLOQUEIO DE COMANDOS
 
-〆 ${prefix}bcmd !cmd1 !cmd2 - Bloqueia os comandos
-〆 ${prefix}dcmd !cmd1 !cmd2 - Desbloqueia os comandos
+〆 ${prefix}bcmd (!cmd1 !cmd2) - Bloqueia os comandos
+〆 ${prefix}dcmd (!cmd1 !cmd2) - Desbloqueia os comandos
 
 ➲ LISTA NEGRA
 
@@ -298,7 +306,7 @@ export const miscGroupMenu = (botInfo : Bot) =>{
 
 ➲ SORTEIO
 
-〆 ${prefix}sorteio numero - Sorteia um número até esse valor.
+〆 ${prefix}sorteio (número) - Sorteia um número até esse valor.
 〆 ${prefix}sorteiomembro - Sorteia um membro do grupo.
 
 ➲ ENTRETENIMENTO
@@ -312,7 +320,7 @@ export const miscGroupMenu = (botInfo : Bot) =>{
 〆 ${prefix}chance (texto) - Chance de algo acontecer
 〆 ${prefix}bafometro - Nível de álcool
 〆 ${prefix}top5 (tema) - Ranking de top 5
-〆 ${prefix}par @pessoa1 @pessoa2 - Nível de compatibilidade
+〆 ${prefix}par (@usuario1 @usuario2) - Nível de compatibilidade
 `
 }
 
@@ -330,6 +338,7 @@ export const adminMenu = (botInfo : Bot)=>{
 ؄؄؄؄؄؄؄؄؄؄؄؄؄
 
 ➲ GERAL
+
 〆 ${prefix}info - Informação do bot
 〆 ${prefix}ping - Informação do sistema
 〆 ${prefix}bloquear (@usuario)  - Bloqueia o usuário
@@ -341,7 +350,7 @@ export const adminMenu = (botInfo : Bot)=>{
 ➲ CUSTOMIZAÇÃO
 
 〆 ${prefix}nomebot (nome) - Altera nome do bot
-〆 ${prefix}prefixo (simbolo) - Altera o prefixo dos comandos
+〆 ${prefix}prefixo (símbolo) - Altera o prefixo dos comandos
 〆 ${prefix}fotobot - Altera foto do bot
 〆 ${prefix}recado (texto) - Altera o texto do recado/status
 
@@ -360,7 +369,11 @@ export const adminMenu = (botInfo : Bot)=>{
 〆 ${prefix}addadmin - Promove a admin do bot
 〆 ${prefix}rmadmin - Rebaixa a usuário do bot
 
+؄؄؄؄؄؄؄؄؄؄؄؄؄
+
 〆 *RECURSOS* 〆
+
+؄؄؄؄؄؄؄؄؄؄؄؄؄
 
 ➲ AUTO-STICKER PRIVADO
 

@@ -16,8 +16,8 @@ const adminCommands = {
     grupos: {
         guide: `Ex: *{$p}grupos* - Mostra os grupos atuais que o bot está e suas informações.\n`,
         msgs: {
-            reply_title: "👥 *Grupos atuais ({$1})*\n\n"+
-            "*ATENÇÃO*: Se quiser sair de *TODOS* os grupos digite !sairgrupos\n\n",
+            reply_title: "👥 *Grupos Atuais ({$1})*\n\n"+
+            "*ATENÇÃO*: Se quiser sair de *TODOS* os grupos digite .sairgrupos\n\n",
             reply_item: "- *ID*: {$1}\n"+
             "- *Nome*: {$2}\n"+
             "- *Participantes*: {$3}\n"+
@@ -33,7 +33,7 @@ const adminCommands = {
         guide: `Ex: Digite *{$p}sair 1* - Faz o bot sair do grupo selecionado.\n\n`+
         `*Obs*: Para ver o número dos grupos é necessário checar no comando *{$p}grupos*\n`,
         msgs: {
-            reply: `🤖 *Sair do grupo* - {$1} (Opção n° {$2})\n\n`+
+            reply: `🤖 *Sair do Grupo* - {$1} (Opção n° {$2})\n\n`+
             '✓ Saí com sucesso do grupo selecionado.',
             error: `Não foi possível sair deste grupo, o grupo não foi encontrado ou o número é inválido. Cheque o comando correto em *{$p}grupos*`,
         },
@@ -42,7 +42,7 @@ const adminCommands = {
     sairgrupos: {
         guide: `Ex: *{$p}sairgrupos* - Sai de todos os grupos.\n`,
         msgs: {
-            reply: `🤖 *Sair de todos os grupos*\n\n`+
+            reply: `🤖 *Sair de Todos os Grupos*\n\n`+
             '✓ Saí com sucesso de todos os *{$1}* grupos.',
         },
         function: adminFunctions.sairgruposCommand
@@ -51,8 +51,8 @@ const adminCommands = {
         guide: `Ex: *{$p}linkgrupo* 1 - Exibe o link do grupo selecionado.\n\n`+
         `*Obs*: Para ver o número dos grupos é necessário checar no comando *{$p}grupos*\n`,
         msgs: {
-            reply_group: '🤖 Entendido, eu enviei o link para você no privado.',
-            reply_admin: `🤖 *Link do grupo* - {$1} (Opção n° {$2})\n\n`+
+            reply_group: 'Entendido, eu enviei o link para você no privado.',
+            reply_admin: `🤖 *Link do Grupo* - {$1} (Opção n° {$2})\n\n`+
             '✓ Aqui está o link do grupo selecionado: {$3}',
             error_bot_not_admin: 'Não foi possível obter o link do grupo, não sou administrador.',
             error_not_found: `Não foi possível obter o link do grupo, o grupo não foi encontrado ou o número é inválido. Cheque o comando correto em *{$p}grupos*`,
@@ -135,7 +135,7 @@ const adminCommands = {
         `Ex: *{$p}bcmdglobal* variado - Bloqueia todos os comandos da categoria VARIADO.\n\n`+
         `*Obs*: Você não pode bloquear comandos de administrador.\n`,
         msgs: {
-            reply_title: "🔒 *Bloquear comandos - Global*\n\n",
+            reply_title: "🔒 *Bloquear Comandos - Global*\n\n",
             reply_item_already_blocked: "Comando *{$1}* já está bloqueado.\n",
             reply_item_blocked: "Comando *{$1}* bloqueado com sucesso.\n",
             reply_item_error: "Comando *{$1}* não pode ser bloqueado.\n",
@@ -171,7 +171,7 @@ const adminCommands = {
     bcgrupos: {
         guide: `Ex: *{$p}bcgrupos* mensagem - Envia uma mensagem para todos os *GRUPOS*.\n`,
         msgs: {
-            message: `🤖*{$1} - Mensagem para os grupos*\n\n`+
+            message: `🤖*{$1} - Mensagem para os Grupos*\n\n`+
             "{$2}",
             wait: "⏳ Em andamento , estou enviando sua mensagem para {$1} grupos.\n\n"+
             "*Tempo estimado*: {$1} segundos",

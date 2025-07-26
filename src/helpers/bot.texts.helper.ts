@@ -18,7 +18,7 @@ const botTexts = {
     admin_registered: `✓ Seu número foi cadastrado como DONO, agora você pode utilizar os comandos de {$p}admin`,
     new_user: "Boas vindas ao {$1}\n\n"+
     `Fala {$2}, vi que você é um usuário novo. Para abrir o menu de comandos digite *{$p}menu*`,
-    new_group: "Olá betinhas *{$1}* , se tiverem alguma dúvida é só digitar "+`*{$p}menu*`,
+    new_group: "🦍...Olá betinhas do grupo *{$1}*, se tiverem alguma dúvida é só digitar "+`*{$p}menu*`,
     guide_header_text: '❔ USO DO COMANDO ❔\n\n',
     no_guide_found: 'Não foi encontrado um guia para este comando.',
     error_command_usage: "Parece que você usou o comando *{$1}* incorretamente ou não sabe como utilizá-lo.\n\n"+
@@ -49,7 +49,7 @@ const botTexts = {
     sync_blacklist: '✓ Foram banidos {$1} membros na sincronização da LISTA-NEGRA',
     sync_antifake: '✓ Foram banidos {$1} membros na sincronização do ANTI-FAKE',
     owner_registered: '✓ Número do DONO configurado.',
-    owner_not_found: 'O número do DONO ainda não foi configurado, digite !admin para cadastrar seu número como dono do bot.',
+    owner_not_found: 'O número do DONO ainda não foi configurado, digite .admin para cadastrar seu número como dono do bot.',
     migrating_database: '! O banco de dados está sendo migrado, por favor aguarde...',
     user_types: {
         owner: '💻 Dono',
