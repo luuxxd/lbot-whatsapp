@@ -11,8 +11,8 @@ export class BotService {
     private defaultBot : Bot = {
         started : 0,
         host_number: '',
-        name: "LBOT",
-        prefix: "!",
+        name: "jawhead",
+        prefix: ".",
         executed_cmds: 0,
         db_migrated: true,
         autosticker: false,

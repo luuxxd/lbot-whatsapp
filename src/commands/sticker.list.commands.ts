@@ -8,7 +8,7 @@ const stickerCommands = {
         msgs: {
             error_limit: 'O video/gif deve ter no máximo 8 segundos.',
             error_message: "Houve um erro ao obter os dados da mensagem.",
-            author_text: 'Solicitado por: {$1}'
+            author_text: '♛ {$1}'
         },
         function: stickerFunctions.sCommand
     },
@@ -24,10 +24,10 @@ const stickerCommands = {
         guide: `Ex: Envie/responda uma *imagem* com *{$p}ssf* - Retira o fundo da imagem e transforma em sticker.\n\n`+
         `*Obs*: Este comando funciona apenas com *IMAGENS*.\n`,
         msgs: {
-            wait: `[AGUARDE] 📸 O fundo da imagem está sendo removido e o sticker será enviado em breve.`,
+            wait: `📸 Aguarde, o fundo da imagem está sendo removido e o sticker será enviado em breve.`,
             error_image: `Este comando é válido apenas para imagens.`,
             error_message: "Houve um erro ao obter os dados da mensagem.",
-            author_text: 'Solicitado por: {$1}'
+            author_text: '♛ {$1}'
         },
         function: stickerFunctions.ssfCommand
     },
@@ -36,9 +36,9 @@ const stickerCommands = {
         `*Obs*: Nem todos os emojis são compátiveis, então vá tentando fazer combinações.\n`,
         msgs: {
             error_emoji: "O emoji {$1} não é compatível para essa união",
-            error_emojis: "Os emoji {$1} e {$2} não são compatíveis para a união",
+            error_emojis: "Os emojis {$1} e {$2} não são compatíveis para a união",
             error_not_found: "Não foi encontrada uma união válida para esses emojis",
-            author_text: 'Solicitado por: {$1}'
+            author_text: '♛ {$1}'
         },
         function: stickerFunctions.emojimixCommand
     },

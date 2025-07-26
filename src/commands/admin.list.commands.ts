@@ -8,8 +8,8 @@ const adminCommands = {
     modoadmin: {
         guide: `Ex: *{$p}modoadmin* - Liga/desliga o MODO ADMIN (apenas administradores do bot podem usar comandos).\n`,
         msgs: {
-            reply_off: "✅ O *MODO ADMIN* foi desativado com sucesso e agora todos podem usar comandos.",
-            reply_on: "✅ O *MODO ADMIN* foi ativado com sucesso e apenas administradores do bot podem usar comandos."
+            reply_off: "✓ O *MODO ADMIN* foi desativado com sucesso e agora todos podem usar comandos.",
+            reply_on: "✓ O *MODO ADMIN* foi ativado com sucesso e apenas administradores do bot podem usar comandos."
         },
         function: adminFunctions.modoadminCommand
     },
@@ -34,7 +34,7 @@ const adminCommands = {
         `*Obs*: Para ver o número dos grupos é necessário checar no comando *{$p}grupos*\n`,
         msgs: {
             reply: `🤖 *Sair do grupo* - {$1} (Opção n° {$2})\n\n`+
-            '✅ Saí com sucesso do grupo selecionado.',
+            '✓ Saí com sucesso do grupo selecionado.',
             error: `Não foi possível sair deste grupo, o grupo não foi encontrado ou o número é inválido. Cheque o comando correto em *{$p}grupos*`,
         },
         function: adminFunctions.sairCommand
@@ -43,7 +43,7 @@ const adminCommands = {
         guide: `Ex: *{$p}sairgrupos* - Sai de todos os grupos.\n`,
         msgs: {
             reply: `🤖 *Sair de todos os grupos*\n\n`+
-            '✅ Saí com sucesso de todos os *{$1}* grupos.',
+            '✓ Saí com sucesso de todos os *{$1}* grupos.',
         },
         function: adminFunctions.sairgruposCommand
     },
@@ -53,8 +53,8 @@ const adminCommands = {
         msgs: {
             reply_group: '🤖 Entendido, eu enviei o link para você no privado.',
             reply_admin: `🤖 *Link do grupo* - {$1} (Opção n° {$2})\n\n`+
-            '✅ Aqui está o link do grupo selecionado: {$3}',
-            error_bot_not_admin: 'Não foi possível obter o link, o bot não é administrador deste grupo.',
+            '✓ Aqui está o link do grupo selecionado: {$3}',
+            error_bot_not_admin: 'Não foi possível obter o link do grupo, não sou administrador.',
             error_not_found: `Não foi possível obter o link do grupo, o grupo não foi encontrado ou o número é inválido. Cheque o comando correto em *{$p}grupos*`,
         },
         function: adminFunctions.linkgrupoCommand
@@ -62,7 +62,7 @@ const adminCommands = {
     admins: {
         guide: `Ex: *{$p}admins* - Exibe todos os admins do bot.\n`,
         msgs: {
-            reply_title: `⭐ *Admins do bot* ({$1})\n\n`,
+            reply_title: `👑 *Meus Administradores* ({$1})\n\n`,
             reply_item: '- *ID*: {$1}\n'+
             '- *Nome*: {$2}\n'+
             '- *Contato*: +{$3}\n'+
@@ -75,9 +75,9 @@ const adminCommands = {
         `Ex: *{$p}addadmin* @membro - Promove o membro marcado a admin do bot.\n`+
         `Ex: *{$p}addadmin* +55219xxxx-xxxx - Promove o número digitado a admin do bot.\n`,
         msgs: {
-            reply: `✅ O usuário +{$1} ({$2}) foi promovido a *ADMINISTRADOR* do bot.`,
-            error_user_not_found: 'O usuário ainda não está registrado no bot, faça ele interagir com o bot primeiro.',
-            error_already_admin: "Este usuário já é *ADMINISTRADOR* do bot.",
+            reply: `✓ O usuário +{$1} ({$2}) foi promovido a *administrador* do bot.`,
+            error_user_not_found: 'O usuário ainda não está nos meus registros, faça ele interagir com o bot primeiro.',
+            error_already_admin: "Este usuário já é administrador do bot.",
         },
         function: adminFunctions.addadminCommand
     },
@@ -89,18 +89,18 @@ const adminCommands = {
         `Ex: Responda com *{$p}rmadmin* - Rebaixa o administrador que for respondido.\n`+
         `Ex: *{$p}rmadmin* @membro - Rebaixa o administrador que for marcado.\n`,
         msgs: {
-            reply: `✅ O usuário +{$1} ({$2}) foi rebaixado a *USUÁRIO* do bot.`,
-            error_not_admin: "Este usuário não é *ADMINISTRADOR* do bot.",
-            error_user_not_found: 'O usuário ainda não está registrado no bot, faça ele interagir com o bot primeiro.',
-            error_demote_owner: "Você não pode rebaixar o *DONO* do bot."
+            reply: `✓ O usuário +{$1} ({$2}) foi rebaixado a usuário comum do bot.`,
+            error_not_admin: "Este usuário não é administrador do bot.",
+            error_user_not_found: 'O usuário ainda não está nos meus registros, faça ele interagir com o bot primeiro.',
+            error_demote_owner: "Você não pode rebaixar o meu dono."
         },
         function: adminFunctions.rmadminCommand
     },
     comandospv: {
         guide: `Ex: *{$p}comandospv* - Liga/desliga os comandos em MENSAGENS PRIVADAS.\n`,
         msgs: {
-            reply_off: "✅ Os *COMANDOS EM MENSAGENS PRIVADAS* foram desativados com sucesso.",
-            reply_on: "✅ Os *COMANDOS EM MENSAGENS PRIVADAS* foram ativados com sucesso."
+            reply_off: "✓ Os *COMANDOS EM MENSAGENS PRIVADAS* foram desativados com sucesso.",
+            reply_on: "✓ Os *COMANDOS EM MENSAGENS PRIVADAS* foram ativados com sucesso."
         },
         function: adminFunctions.comandospvCommand
     },
@@ -111,19 +111,19 @@ const adminCommands = {
         msgs: {
             error_max_commands_invalid: "A quantidade máxima de comandos por minuto está inválida, precisa ser um número e ser maior que 3.",
             error_block_time_invalid: "O tempo de bloqueio de mensagens está inválido, precisa ser um número e maior que 10.",
-            reply_on: "✅ A *TAXA DE COMANDOS POR MINUTO* foi ativada com sucesso.\n\n"+
+            reply_on: "✓ A *TAXA DE COMANDOS POR MINUTO* foi ativada com sucesso.\n\n"+
             '*Configuração atual*: \n'+
             '- *Comandos por minuto*: {$1}\n'+
             '- *Tempo de bloqueio*: {$2}s\n',
-            reply_off: "✅ A *TAXA DE COMANDOS POR MINUTO* foi desativada com sucesso.",
+            reply_off: "✓ A *TAXA DE COMANDOS POR MINUTO* foi desativada com sucesso.",
         },
         function: adminFunctions.taxacomandosCommand
     },
     autostickerpv: {
         guide: `Ex: *{$p}autostickerpv* - Liga/desliga a criação automatica de stickers sem precisar de comandos no privado.\n`,
         msgs: {
-            reply_off: "✅ O *AUTO-STICKER* em mensagens privadas foi desativado com sucesso",
-            reply_on: "✅ O *AUTO-STICKER* em mensagens privadas foi ativado com sucesso",
+            reply_off: "✓ O *AUTO-STICKER* em mensagens privadas foi desativado com sucesso.",
+            reply_on: "✓ O *AUTO-STICKER* em mensagens privadas foi ativado com sucesso.",
         },
         function: adminFunctions.autostickerpvCommand
     },
@@ -163,8 +163,8 @@ const adminCommands = {
         msgs: {
             error_link_invalid: "Isso não é um link de grupo válido.",
             error_group: "Houve um erro ao entrar nesse grupo, verifique se o link está correto.",
-            reply_pending: "⏳ Fiz um pedido para entrar no grupo, porém é necessário um administrador aceitar a entrada.",
-            reply: "✅ Entrei no grupo pelo link fornecido."
+            reply_pending: "⏳ Fiz um pedido para entrar no grupo, porém é necessário um administrador aceitar a entrada...",
+            reply: "✓ Entrei no grupo pelo link fornecido."
         },
         function: adminFunctions.entrargrupoCommand
     },
@@ -175,14 +175,14 @@ const adminCommands = {
             "{$2}",
             wait: "⏳ Em andamento , estou enviando sua mensagem para {$1} grupos.\n\n"+
             "*Tempo estimado*: {$1} segundos",
-            reply: "✅ Anúncio feito com sucesso."
+            reply: "✓ Anúncio feito com sucesso."
         },
         function: adminFunctions.bcgruposCommand
     },
     fotobot: {
         guide: `Ex: Envie/responda uma *imagem* com *{$p}fotobot* - Altera a foto do BOT.\n`,
         msgs: {
-            reply: "✅ A foto do bot foi alterada com sucesso.",
+            reply: "✓ A foto do bot foi alterada com sucesso.",
             error_message: "Houve um erro ao obter os dados da mensagem."
         },
         function: adminFunctions.fotobotCommand
@@ -190,7 +190,7 @@ const adminCommands = {
     nomebot: {
         guide: `Ex: *{$p}nomebot* Teste123 - Muda o nome do *BOT* para *Teste123* e atualiza os menus com o novo nome.\n`,
         msgs: {
-            reply: "✅ O nome do bot foi alterado com sucesso.",
+            reply: "✓ O nome do bot foi alterado com sucesso.",
         },
         function: adminFunctions.nomebotCommand
     },
@@ -198,7 +198,7 @@ const adminCommands = {
         guide: `Ex: *{$p}prefixo* .  - Muda o prefixo dos *COMANDOS* para *.* e atualiza os menus e comandos com o novo prefixo.\n\n`+
         `Suporta os seguintes prefixos: *!*  *#*  *.*  ***\n`,
         msgs: {
-            reply: "✅ O prefixo dos comandos foi alterado com sucesso.",
+            reply: "✓ O prefixo dos comandos foi alterado com sucesso.",
             error_not_supported: "Esse símbolo não é suportado como prefixo, são suportados somente: ! # . *"
         },
         function: adminFunctions.prefixoCommand
@@ -210,7 +210,7 @@ const adminCommands = {
             "*Total*: {$1}\n\n",
             reply_item: "- *ID*: {$1}\n"+
             "- *Contato*: +{$2}\n\n",
-            error: "O bot não tem usuários bloqueados.",
+            error: "Não há usuários bloqueados.",
         },
         function: adminFunctions.listablockCommand
     },
@@ -222,7 +222,7 @@ const adminCommands = {
             error_block_admin_bot: "O usuário +{$1} é *admin* do bot, não foi possivel bloquear.",
             error_already_blocked: "O usuário +{$1} já está *bloqueado*.",
             error_block: "Houve um erro ao bloquear este usuário, verifique se o número inserido existe e está correto.",
-            reply: "✅ O usuário +{$1} foi *bloqueado* com sucesso"
+            reply: "✓ O usuário +{$1} foi *bloqueado* com sucesso."
         },
         function: adminFunctions.bloquearCommand
     },
@@ -236,7 +236,7 @@ const adminCommands = {
         msgs: {
             error_already_unblocked: "O usuário +{$1} já está *desbloqueado* ou nunca foi bloqueado.",
             error_unblock: "Houve um erro ao desbloquear este usuário, verifique se o número está correto e que ele realmente está bloqueado.",
-            reply: "✅ O usuário +{$1} foi *desbloqueado* com sucesso."
+            reply: "✓ O usuário +{$1} foi *desbloqueado* com sucesso."
         },
         function: adminFunctions.desbloquearCommand
     },
@@ -265,7 +265,7 @@ const adminCommands = {
     desligar: {
         guide: `Ex: *{$p}desligar* - Desliga o bot.\n`,
         msgs: {
-            reply: "✅ Entendido, o bot será desligado."
+            reply: "✓ Entendido, o bot será desligado."
         },
         function: adminFunctions.desligarCommand
     },

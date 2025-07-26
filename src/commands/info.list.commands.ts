@@ -4,7 +4,7 @@ const infoCommands = {
     menu: {
         guide: `Ex: *{$p}menu* - Exibe o menu de comandos gerais.\n`,
         msgs: {
-            reply: "Olá, *{$1}*\n"+
+            reply: "Fala, *{$1}*\n"+
             "Tipo de Usuário: *{$2}*\n"+
             "Comandos feitos: *{$3}*\n"+
             '────────────────────────\n',
@@ -16,7 +16,7 @@ const infoCommands = {
     reportar: {
         guide: `Ex: *{$p}reportar* mensagem - Reporta uma mensagem para a administração do Bot.\n`,
         msgs: {
-            reply: `✅ Obrigado, seu problema foi reportado com sucesso e será analisado pelo dono.`,
+            reply: `O seu problema foi reportado com sucesso e será analisado pelo dono.`,
             error: 'Não foi possível enviar a mensagem para o dono, pois ele ainda não está cadastrado.',
             reply_admin: "‼️ *Reportar*\n\n"+
             "*Usuário*: {$1}\n"+

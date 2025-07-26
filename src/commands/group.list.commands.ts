@@ -46,7 +46,7 @@ const groupCommands = {
     fotogrupo: {
         guide: `Ex: Envie/responda uma *imagem* com *{$p}fotogrupo* - Altera a foto do grupo.\n\n`,
         msgs: {
-            reply: "✅ A foto do GRUPO foi alterada com sucesso.",
+            reply: "✓ A foto do grupo foi alterada com sucesso.",
         },
         function: groupFunctions.fotogrupoCommand
     },
@@ -55,13 +55,13 @@ const groupCommands = {
         `Ex: Marque alguém com *{$p}aviso* - Adiciona um aviso ao membro marcado.\n\n`+
         `*Obs*: Se o membro chegar a 3 avisos ele é adicionado automaticamente a lista negra do grupo.\n`,
         msgs: {
-            reply: '‼️ Aviso\n\n'+
-            "@{$1}, você recebeu um aviso do administrador, se chegar a 3 avisos será adicionado a lista negra do grupo.\n\n"+
+            reply: ''+
+            "@{$1}, você recebeu um aviso do administrador, se chegar a 3 avisos você será adicionado à lista negra do grupo.\n\n"+
             'Atualmente você tem {$2} avisos.',
-            reply_max_warning: '‼️ Aviso\n\n'+
+            reply_max_warning: ''+
             '@{$1}, você recebeu o 3° aviso e será adicionado a lista negra do grupo.',
-            error_not_registered: 'Membro do grupo ainda não foi registrado pelo bot.',
-            error_warning_bot: 'Não é possível dar um aviso ao bot.',
+            error_not_registered: 'Esse usuário ainda não foi registrado pelo bot ou não deve mais estar no grupo.',
+            error_warning_bot: 'Não posso dar um aviso em mim mesmo.',
             error_warning_admin: 'Não é possível dar um aviso a um administrador do grupo.'
         },
         function: groupFunctions.avisoCommand
@@ -70,18 +70,18 @@ const groupCommands = {
         guide: `Ex: Responda alguém com *{$p}rmaviso* - Remove um aviso do membro respondido.\n`+
         `Ex: Marque alguém com *{$p}rmaviso* - Remove um aviso do membro marcado.\n\n`,
         msgs: {
-            reply: '‼️ Aviso removido\n\n'+
+            reply: ''+
             "@{$1}, você teve um aviso removido pelo administrador.\n\n"+
             'Atualmente você tem {$2} avisos.',
-            error_no_warning: 'Esse membro não tem nenhum aviso para ser removido',
-            error_not_registered: 'Membro do grupo ainda não foi registrado pelo bot.',
+            error_no_warning: 'Esse membro não tem nenhum aviso para ser removido.',
+            error_not_registered: 'Esse usuário ainda não foi registrado pelo bot ou não deve mais estar no grupo.',
         },
         function: groupFunctions.rmavisoCommand
     },
     zeraravisos:{
         guide: `Ex: *{$p}zeraravisos* - Remove todos os avisos dos membros do grupo.\n`,
         msgs: {
-            reply: '‼️ Zerar avisos\n\n'+
+            reply: ''+
             "Todos os avisos dos membros foram zerados.",
         },
         function: groupFunctions.zeraravisosCommand
@@ -90,30 +90,30 @@ const groupCommands = {
         guide: `Ex: *{$p}addfiltros* batata uva - Adiciona as palavras *batata* e *uva* no filtro de palavras.\n\n`+
         '*Obs*: Se algum membro enviar uma mensagem contendo uma palavra do filtro, a mensagem dele será deletada automaticamente.',
         msgs: {
-            reply_title: '🚫 Filtro de palavras\n\n',
-            reply_item_success: 'A palavra *{$1}* foi adicionada ao filtro.\n',
-            reply_item_error: 'A palavra *{$1}* já existe no filtro.\n',
+            reply_title: '',
+            reply_item_success: 'A palavra *{$1}* foi adicionada ao filtro.',
+            reply_item_error: 'A palavra *{$1}* já existe no filtro.',
         },
         function: groupFunctions.addfiltrosCommand
     },
     rmfiltros: {
         guide: `Ex: *{$p}rmfiltros* batata uva - Remove as palavras *batata* e *uva* do filtro de palavras.`,
         msgs: {
-            reply_title: '🚫 Filtro de palavras\n\n',
-            reply_item_success: 'A palavra *{$1}* foi removida do filtro.\n',
-            reply_item_error: 'A palavra *{$1}* não existe no filtro.\n',
+            reply_title: '',
+            reply_item_success: 'A palavra *{$1}* foi removida do filtro.',
+            reply_item_error: 'A palavra *{$1}* não existe no filtro.',
         },
         function: groupFunctions.rmfiltrosCommand
     },
     addlista: {
         guide: `Ex: Responda alguém com *{$p}addlista* - Adiciona o numero de quem foi respondido a lista negra e bane em seguida.\n\n`+
-        `Ex: Marque alguém com *{$p}addlista* - Adiciona o numero de quem foi marcado a lista negra e bane em seguida.\n\n`+
+        `Ex: Marque alguém com *{$p}addlista* - Adiciona o numero de quem foi marcado a lista negra e remove em seguida.\n\n`+
         `Ex: *{$p}addlista* +55219xxxx-xxxx - Adiciona o número digitado a lista negra do grupo e bane em seguida.\n.`,
         msgs: {
-            reply: "✅ O número desse usuário foi adicionado á lista negra e será banido do grupo caso ainda esteja aqui.",
-            error_add_bot: "O *bot* não pode ser adicionado a lista negra.",
-            error_add_admin: "O *administrador do grupo* não pode ser adicionado a lista negra.",
-            error_already_listed: "Este usuário já está na lista negra.",
+            reply: "✓ O número desse usuário foi adicionado na lista negra e será banido do grupo caso ainda esteja aqui.",
+            error_add_bot: "Calma lá... eu não posso adicionar eu mesmo na lista negra.",
+            error_add_admin: "O *administrador* do grupo não pode ser adicionado na lista negra.",
+            error_already_listed: "Esse usuário já está na lista negra.",
         },
         function: groupFunctions.addlistaCommand
     },
@@ -123,7 +123,7 @@ const groupCommands = {
         `Você também pode remover da lista negra da seguinte forma: \n\n`+
         `Ex: *{$p}rmlista* +55219xxxx-xxxx - Remove o número digitado da lista negra do grupo.\n`,
         msgs: {
-            reply: "✅ O número desse usuário foi removido da lista negra.",
+            reply: "✓ O número desse usuário foi removido da lista negra.",
             error_not_listed: "Este usuário não está na lista negra.",
         },
         function: groupFunctions.rmlistaCommand
@@ -131,8 +131,8 @@ const groupCommands = {
     listanegra: {
         guide: `Ex: *{$p}listanegra* - Exibe a lista negra do grupo.\n`,
         msgs: {
-            error_empty_list: "Não existem usuários na lista negra deste grupo.",
-            reply_title: "❌ *Lista negra*\n\n"+
+            error_empty_list: "Não existem usuários na lista negra do grupo.",
+            reply_title: "💀📋 *Lista negra*\n\n"+
             "*Usuários na lista negra*: {$1}\n\n",
             reply_item: '- *ID*: {$1}\n'+
             '- *Nome*: {$2}\n'+
@@ -141,10 +141,10 @@ const groupCommands = {
         function: groupFunctions.listanegraCommand
     },
     add: {
-        guide: `Ex: *{$p}add* +55219xxxx-xxxx - Digite o numero com o código do país para adicionar a pessoa.\n\n`+
-        `Ex: *{$p}add* +55219xxxx-xxxx, +55119xxxx-xxxx - Digite os numeros com o código do país (adiciona mais de uma pessoa no grupo).\n`,
+        guide: `Ex: *{$p}add* +55219xxxx-xxxx - Digite o número com o código do país para adicionar a pessoa.\n\n`+
+        `Ex: *{$p}add* +55219xxxx-xxxx, +55119xxxx-xxxx - Digite os números com o código do país (adiciona mais de uma pessoa no grupo).\n`,
         msgs: {
-            reply: '✅ O número +{$1} foi adicionado ao grupo com sucesso.',
+            reply: '✓ O número +{$1} foi adicionado ao grupo com sucesso.',
             error_add: "O número +{$1} não pode ser adicionado. Provavelmente está com privacidade ativada, já está no grupo ou o grupo não aceita mais membros.",
             error_input: "Foi encontrado texto no número inserido, digite corretamente o número de quem você deseja adicionar ao grupo.",
             error_invalid_number: "Houve um erro em adicionar o número +{$1}, verifique se o número existe ou tente tirar o 9.",
@@ -155,10 +155,10 @@ const groupCommands = {
         guide: `Ex: *{$p}ban* @membro - Para banir um membro marcando ele.\n\n`+
         `Ex: Responder alguém com *{$p}ban* - Bane o membro que você respondeu.\n`,
         msgs: {
-            reply_title: '🚷 *Banimento de membros*\n\n',
-            reply_item_success: "+{$1} foi banido do grupo com sucesso.\n",
-            reply_item_ban_admin: "+{$1} não pode ser banido, o bot não pode banir um administrador.\n",
-            reply_item_not_found: "+{$1} não pode ser banido, provavelmente ele já saiu do grupo.\n",
+            reply_title: '',
+            reply_item_success: "@{$1} foi removido do grupo com sucesso.\n",
+            reply_item_ban_admin: "@{$1} não pode ser removido, o bot não pode remover um administrador.",
+            reply_item_not_found: "+{$1} não pode ser removido, provavelmente ele já saiu do grupo.",
         },
         function: groupFunctions.banCommand
     },
@@ -166,10 +166,10 @@ const groupCommands = {
         guide: `Ex: *{$p}promover* @membro - Promove o membro mencionado a *administrador*.\n\n`+
         `Ex: Responder com *{$p}promover* - Promove o usuário respondido a *administrador*.\n`,
         msgs: {
-            error: "O bot não pode ser promovido por ele mesmo.",
-            reply_title: "⬆️ *Promover membros*\n\n",
-            reply_item_success: "@{$1} foi promovido para *ADMINISTRADOR*.\n",
-            reply_item_error: "@{$1} já é um *ADMINISTRADOR*.\n",
+            error: "Eu não posso promover eu mesmo.",
+            reply_title: "",
+            reply_item_success: "♛ @{$1} foi promovido para *administrador*.",
+            reply_item_error: "@{$1} já é um *administrador*.",
         },
         function: groupFunctions.promoverCommand
     },
@@ -177,27 +177,27 @@ const groupCommands = {
         guide: `Ex: *{$p}rebaixar* @admin - Rebaixa o administrador mencionado a *membro*.\n\n`+
         `Ex: Responder com *{$p}rebaixar* - Rebaixa o administrador respondido a *membro*.\n`,
         msgs: {
-            error: "O bot não pode ser rebaixado por ele mesmo.",
-            reply_title: "⬇️ *Rebaixar membros*\n\n",
-            reply_item_success: "@{$1} foi rebaixado para *MEMBRO*.\n",
-            reply_item_error_is_member: "@{$1} já é um *MEMBRO*.\n",
+            error: "Eu não posso rebaixar eu mesmo.",
+            reply_title: "",
+            reply_item_success: "Betinha ☛ @{$1} rebaixado(a) para membro comum.\n",
+            reply_item_error_is_member: "@{$1} já é um membro comum.\n",
             reply_item_error: "@{$1} não pode ser rebaixado.\n"
         },
         function: groupFunctions.rebaixarCommand
     },
     mt: {
-        guide: `Ex: *{$p}mt* - Marca todos os *membros/admin* do grupo.\n\n`+
-        `Ex: *{$p}mt* mensagem - Marca todos os *membros/admin* do grupo com uma mensagem.\n`,
+        guide: `Ex: *{$p}mt* - Marca todos os membros/admin do grupo.\n\n`+
+        `Ex: *{$p}mt* mensagem - Marca todos os membros/admin do grupo com uma mensagem.\n`,
         msgs: {
             reply: "❕ Marquei todos os {$1} *membros/admins*.",
-            reply_with_message: "❕ Marquei todos os {$1} *membros/admins*.\n\n"+
+            reply_with_message: "❕ Marquei todos os {$1} membros/admins.\n\n"+
             "*Mensagem*: {$2}\n"
         },
         function: groupFunctions.mtCommand
     },
     mm: {
-        guide: `Ex: *{$p}mm* - Marca todos os *MEMBROS* do grupo.\n\n`+
-        `Ex: *{$p}mm* mensagem - Marca todos os *MEMBROS* do grupo com uma mensagem.\n`,
+        guide: `Ex: *{$p}mm* - Marca todos os membros do grupo.\n\n`+
+        `Ex: *{$p}mm* mensagem - Marca todos os membros do grupo com uma mensagem.\n`,
         msgs: {
             reply: "❕ Marquei todos os {$1} *membros*.",
             reply_with_message: "❕ Marquei os {$1} *membros*.\n\n"+
@@ -207,10 +207,10 @@ const groupCommands = {
         function: groupFunctions.mmCommand
     },
     adms: {
-        guide: `Ex: Responder com *{$p}adms* - Marca todos os *ADMINISTRADORES* em uma postagem.\n\n`+
-        `Ex: *{$p}adms* - Marca os *ADMINISTRADORES* do grupo.\n`,
+        guide: `Ex: Responder com *{$p}adms* - Marca todos os *administradores* em uma postagem.\n\n`+
+        `Ex: *{$p}adms* - Marca os administradores do grupo.\n`,
         msgs: {
-            reply: "🤖❕ Marquei todos os *{$1}* admins.",
+            reply: "❕ Marquei todos os *{$1}* admins.",
             reply_with_message: "❕ Marquei todos os {$1} *admins*.\n\n"+
             "*Mensagem*: {$2}\n",
         },
@@ -219,7 +219,7 @@ const groupCommands = {
     dono: {
         guide: `Ex: *{$p}dono* - Exibe quem é dono do grupo.\n`,
         msgs: {
-            reply: "🤖 O dono do grupo é: +{$1}",
+            reply: "Dono do grupo: +{$1}",
             error: "Não foi possível exibir o dono do grupo, o dono teve o número banido ou cancelado."
         },
         function: groupFunctions.donoCommand
@@ -227,15 +227,15 @@ const groupCommands = {
     mutar: {
         guide: `Ex: *{$p}mutar* - Liga/desliga a execução de comandos dos membros.\n`,
         msgs: {
-            reply_on: "✅ O recurso de *MUTAR GRUPO* foi ativado com sucesso",
-            reply_off: "✅ O recurso de *MUTAR GRUPO* foi desativado com sucesso"
+            reply_on: "✓ O recurso de *MUTAR GRUPO* foi ativado com sucesso",
+            reply_off: "✓ O recurso de *MUTAR GRUPO* foi desativado com sucesso"
         },
         function: groupFunctions.mutarCommand
     },
     link: {
         guide: `Ex: *{$p}link* - Exibe o link do grupo.\n`,
         msgs: {
-            reply: "👥 *Link do grupo*\n\n"+
+            reply: "🔗 *Link do grupo*\n\n"+
             "*Nome do grupo*: {$1}\n"+
             "*Link do grupo*: {$2}"
         },
@@ -244,16 +244,16 @@ const groupCommands = {
     rlink: {
         guide: `Ex: *{$p}rlink* - Redefine o link do grupo.\n`,
         msgs: {
-            error: "Houve um erro na redefinição de link",
-            reply: "✅ Link do grupo foi redefinido com sucesso."
+            error: "Houve um erro na redefinição de link.",
+            reply: "✓ Link do grupo foi redefinido com sucesso."
         },
         function: groupFunctions.rlinkCommand
     },
     restrito: {
         guide: `Ex: *{$p}restrito* - Abre/fecha o grupo apenas para administradores conversarem.\n`,
         msgs: {
-            reply_on: "✅ O grupo foi restrito apenas para *ADMINISTRADORES* poderem conversar.",
-            reply_off: '✅ O grupo foi liberado para todos os *MEMBROS* poderem conversar.'
+            reply_on: "✓ O grupo foi restrito, apenas administradores podem conversar.",
+            reply_off: '✓ O grupo foi liberado para todos os membros poderem conversar.'
         },
         function: groupFunctions.restritoCommand
     },
@@ -262,26 +262,26 @@ const groupCommands = {
         `*Obs*: Configure as respostas automáticas com os comandos *{$p}addresp* e *{$p}rmresp*, e veja `+
         `a configuração atual com o comando *{$p}respostas*`,
         msgs: {
-            reply_on: "✅ O recurso de *RESPOSTA AUTOMÁTICA* foi ativado com sucesso.",
-            reply_off: "✅ O recurso de *RESPOSTA AUTOMÁTICA* foi desativado com sucesso."
+            reply_on: "✓ O recurso de *RESPOSTA AUTOMÁTICA* foi ativado com sucesso.",
+            reply_off: "✓ O recurso de *RESPOSTA AUTOMÁTICA* foi desativado com sucesso."
         },
         function: groupFunctions.autorespCommand
     },
     addresp: {
-        guide: `Ex: *{$p}addresp* !batata Vejo que você digitou !batata - Adiciona uma resposta automática para a palavra *!batata*.\n`,
+        guide: `Ex: *{$p}addresp* .batata Vejo que você digitou .batata - Adiciona uma resposta automática para a palavra *.batata*.\n`,
         msgs: {
-            reply_added: '✅ A resposta automática para a palavra *{$1}* foi adicionada com sucesso.\n\n'+
+            reply_added: '✓ A resposta automática para a palavra *{$1}* foi adicionada com sucesso.\n\n'+
             'Resposta configurada: {$2}',
-            error_already_added: 'Já existe uma resposta automática configurada para a palavra *{$1}*, use o comando *!rmresp* {$1} para remove-la primeiro.'
+            error_already_added: 'Já existe uma resposta automática configurada para a palavra *{$1}*, use o comando *.rmresp* {$1} para remove-la primeiro.'
         },
         function: groupFunctions.addrespCommand
     },
     rmresp: {
-        guide: `Ex: *{$p}rmresp* !batata - Remove a resposta automática para a palavra *!batata*.\n`,
+        guide: `Ex: *{$p}rmresp* .batata - Remove a resposta automática para a palavra *.batata*.\n`,
         msgs: {
-            reply_removed: '✅ A resposta automática para a palavra *{$1}* foi removida com sucesso.',
+            reply_removed: '✓ A resposta automática para a palavra *{$1}* foi removida com sucesso.',
             error_not_exist: 'Não existe uma resposta automática configurada para a palavra *{$1}*',
-            reply_title: '🤖 Resposta automática\n\n',
+            reply_title: '',
             reply_item_success: 'A resposta para *{$1}* foi removida com sucesso.\n',
             reply_item_error: 'Não existe resposta para *{$1}*\n',
         },
@@ -300,16 +300,16 @@ const groupCommands = {
     antilink: {
         guide: `Ex: *{$p}antilink* - Liga/desliga o Anti-LINK no grupo.\n`,
         msgs: {
-            reply_on: "✅ O recurso de *ANTI-LINK* foi ativado com sucesso.",
-            reply_off: "✅ O recurso de *ANTI-LINK* foi desativado com sucesso."
+            reply_on: "✓ Recurso de *ANTI-LINK* ativado com sucesso.",
+            reply_off: "✓ Recurso de *ANTI-LINK* desativado com sucesso."
         },
         function: groupFunctions.antilinkCommand
     },
     addexlink: {
-        guide: `Ex: *{$p}addexlink* google.com youtube.com - Adiciona links serem exceções do Anti-LINK.\n`,
+        guide: `Ex: *{$p}addexlink* google.com youtube.com - Adiciona links para serem exceções do Anti-LINK.\n`,
         msgs: {
-            reply_title: '✅  Exceções do Anti-LINK\n\n',
-            reply_item_added: "O link *{$1}* foi adicionado com sucesso as exceções.\n",
+            reply_title: '✅ Exceções do Anti-LINK\n\n',
+            reply_item_added: "O link *{$1}* foi adicionado com sucesso às exceções.\n",
             reply_item_already_added: "O link *{$1}* já está nas exceções.\n"
         },
         function: groupFunctions.addexlinkCommand
@@ -317,7 +317,7 @@ const groupCommands = {
     rmexlink: {
         guide: `Ex: *{$p}rmexlink* google.com youtube.com - Remove links das exceções do Anti-LINK.\n`,
         msgs: {
-            reply_title: '✅  Exceções do Anti-LINK\n\n',
+            reply_title: '✅ Exceções do Anti-LINK\n\n',
             reply_item_removed: "O link *{$1}* foi removido com sucesso das exceções.\n",
             reply_item_not_exist: "O link *{$1}* não está nas exceções.\n"
         },
@@ -326,8 +326,8 @@ const groupCommands = {
     autosticker: {
         guide: `Ex: *{$p}autosticker* - Liga/desliga a criação automatica de stickers sem precisar de comandos.\n`,
         msgs: {
-            reply_on: "✅ O recurso de *AUTO-STICKER* foi ativado com sucesso.",
-            reply_off: "✅ O recurso de *AUTO-STICKER* foi desativado com sucesso."
+            reply_on: "✓ Recurso de *AUTO-STICKER* ativado com sucesso.",
+            reply_off: "✓ Recurso de *AUTO-STICKER* desativado com sucesso."
         },
         function: groupFunctions.autostickerCommand
     },
@@ -335,8 +335,8 @@ const groupCommands = {
         guide: `Ex: *{$p}bemvindo*  - Liga/desliga a mensagem de bem-vindo para novos membros.\n\n`+
         `Ex: *{$p}bemvindo* mensagem - Liga a mensagem de bem-vindo com uma mensagem da sua escolha.\n`,
         msgs: {
-            reply_on: "✅ O recurso de *BOAS VINDAS* foi ativado com sucesso.",
-            reply_off: "✅ O recurso de *BOAS VINDAS* foi desativado com sucesso.",
+            reply_on: "✓ Recurso de *BOAS VINDAS* ativado com sucesso.",
+            reply_off: "✓ Recurso de *BOAS VINDAS* desativado com sucesso.",
         },
         function: groupFunctions.bemvindoCommand
     },
@@ -344,17 +344,17 @@ const groupCommands = {
         guide: `Ex: *{$p}antifake* - Liga/desliga o Anti-FAKE no grupo.\n\n`+
         `*Obs*: A ativação do anti-fake bane pessoas com DDI do exterior (que não sejam 55 - Brasil).\n`,
         msgs: {
-            reply_on: "✅ O recurso de *ANTI-FAKE* foi ativado com sucesso.",
-            reply_off: "✅ O recurso de *ANTI-FAKE* foi desativado com sucesso."
+            reply_on: "✓ Recurso de *ANTI-FAKE* ativado com sucesso.",
+            reply_off: "✓ Recurso de *ANTI-FAKE* desativado com sucesso."
         },
         function: groupFunctions.antifakeCommand
     },
     addexfake: {
         guide: `Ex: *{$p}addexfake 1, 64, +1 282 254 224* - Adiciona prefixos e/ou números para serem exceções do Anti-FAKE.\n`,
         msgs: {
-            reply_title: '✅  Exceções do Anti-FAKE\n\n',
-            reply_item_added_prefix: "O prefixo *{$1}* foi adicionado com sucesso as exceções.\n",
-            reply_item_added_number: "O número *{$1}* foi adicionado com sucesso as exceções.\n",
+            reply_title: '✅ Exceções do Anti-FAKE\n\n',
+            reply_item_added_prefix: "O prefixo *{$1}* foi adicionado com sucesso às exceções.\n",
+            reply_item_added_number: "O número *{$1}* foi adicionado com sucesso às exceções.\n",
             reply_prefix_already_added: "O prefixo *{$1}* já está nas exceções.\n",
             reply_number_already_added: "O número *{$1}* já está nas exceções.\n"
         },
@@ -363,7 +363,7 @@ const groupCommands = {
     rmexfake: {
         guide: `Ex: *{$p}rmexfake 1, 64, +1 282 254 224* - Remove prefixos e/ou números das exceções do Anti-FAKE.\n`,
         msgs: {
-            reply_title: '✅  Exceções do Anti-FAKE\n\n',
+            reply_title: '✅ Exceções do Anti-FAKE\n\n',
             reply_item_removed_prefix: "O prefixo *{$1}* foi removido com sucesso das exceções.\n",
             reply_item_removed_number: "O número *{$1}* foi removido com sucesso das exceções.\n",
             reply_prefix_not_exist: "O prefixo *{$1}* não está nas exceções.\n",
@@ -374,12 +374,12 @@ const groupCommands = {
     },
     antiflood: {
         guide: `Ex: *{$p}antiflood*  - Liga/desliga o Anti-FLOOD no grupo.\n\n`+
-        `Ex: *{$p}antiflood* 5 15  - Maxímo de mensagens fica 5 mensagens a cada 15 segundos.\n`,
+        `Ex: *{$p}antiflood* 5 15  - O maxímo de mensagens chega a 5 mensagens a cada 15 segundos.\n`,
         msgs: {
             error_value_message: "O valor de mensagem é inválido, escolha um valor entre 5-20 mensagens para o Anti-FLOOD.",
             error_value_interval: "O valor do intervalo é inválido, escolha um valor entre 10-60 segundos para o intervalo do Anti-FLOOD.",
-            reply_on: "✅ O recurso de *ANTI-FLOOD* foi ativado para *{$1}* mensagens a cada *{$2}* segundos.",
-            reply_off: "✅ O recurso de *ANTI-FLOOD* foi desativado com sucesso."
+            reply_on: "✓ Recurso de *ANTI-FLOOD* ativado para *{$1}* mensagens a cada *{$2}* segundos.",
+            reply_off: "✓ Recurso de *ANTI-FLOOD* desativado com sucesso."
         },
         function: groupFunctions.antifloodCommand
     },
@@ -443,10 +443,10 @@ const groupCommands = {
         `*Obs*: Você não pode bloquear comandos de administrador.\n`,
         msgs: {
             reply_title: "🔒 *Bloquear comandos - Grupo*\n\n",
-            reply_item_already_blocked: "Comando *{$1}* já está bloqueado.\n",
+            reply_item_already_blocked: "O comando *{$1}* já está bloqueado.\n",
             reply_item_blocked: "Comando *{$1}* bloqueado com sucesso.\n",
-            reply_item_error: "Comando *{$1}* não pode ser bloqueado.\n",
-            reply_item_not_exist: "Comando *{$1}* não existe.\n",
+            reply_item_error: "O comando *{$1}* não pode ser bloqueado.\n",
+            reply_item_not_exist: "O comando *{$1}* não existe.\n",
         },
         function: groupFunctions.bcmdCommand
     },

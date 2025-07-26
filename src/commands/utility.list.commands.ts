@@ -15,7 +15,7 @@ const utilityCommands = {
         `*Obs*: Este comando funciona apenas com *AUDIO/VIDEO*.\n`,
         msgs: {
             error_message: "Houve um erro ao obter os dados da mensagem.",
-            wait: "⏳ Em andamento , estou procurando sua música.",
+            wait: "⏳ Em andamento, estou procurando sua música.",
             reply: "💿 *Reconhecimento de música*\n\n"+
             "*Título*: {$1}\n"+
             "*Produtora*: {$2}\n"+
@@ -23,7 +23,7 @@ const utilityCommands = {
             "*Lançamento*: {$4}\n"+
             "*Album*: {$5}\n"+
             "*Artistas*: {$6}\n",
-            error_not_found: 'Nenhuma música compatível foi encontrada'
+            error_not_found: 'Nenhuma música compatível foi encontrada.'
         },
         function: utilityFunctions.qualmusicaCommand
     },
@@ -43,7 +43,7 @@ const utilityCommands = {
         function: utilityFunctions.steamverdeCommand
     },
     animes:{
-        guide: `Ex: *{$p}animes* - Exibe os ultimos lançamentos de episódios de anime.\n`,
+        guide: `Ex: *{$p}animes* - Exibe os últimos lançamentos de episódios de anime.\n`,
         msgs: {
             reply_title: '🇯🇵 *Lançamento de animes*\n\n',
             reply_item: '*{$1}*\n'+
@@ -53,7 +53,7 @@ const utilityCommands = {
         function: utilityFunctions.animesCommand
     },
     mangas:{
-        guide: `Ex: *{$p}mangas* - Exibe os ultimos lançamentos de capitulos de mangá.\n`,
+        guide: `Ex: *{$p}mangas* - Exibe os últimos lançamentos de capítulos de mangá.\n`,
         msgs: {
             reply_title: '🇯🇵 *Lançamento de mangás*\n\n',
             reply_item: '*{$1}*\n'+
@@ -66,9 +66,9 @@ const utilityCommands = {
         guide: `Ex: *{$p}brasileirao* - Exibe a tabela e a rodada atual do Brasileirão Serie A.\n`+
         `Ex: *{$p}brasileirao* B - Exibe a tabela e a rodada atual do Brasileirão Serie B.\n`,
         msgs: {
-            error: '[❗] A série digitada não é suportada, atualmente são suportados apenas A e B.',
-            error_rounds_not_found: 'Não foram encontradas rodadas para este campeonato',
-            reply_title: '⚽ *Brasileirão série {$1}*\n\n',
+            error: 'A série digitada não é suportada, atualmente são suportados apenas A e B.',
+            error_rounds_not_found: 'Não foram encontradas rodadas para este campeonato.',
+            reply_title: '⚽🇧🇷 *Brasileirão Série {$1}*\n\n',
             reply_table_title: '🗒️ *Tabela*:\n\n',
             reply_table_item: '- {$1}° {$2} - P:{$3} J:{$4} V:{$5}\n',
             reply_round_title: '\n📆 *Rodada Atual*:\n\n',
@@ -125,7 +125,7 @@ const utilityCommands = {
         msgs: {
             error_message: "Houve um erro ao obter os dados da mensagem.",
             error_only_image: "Este comando só funciona com *IMAGENS*.",
-            wait: "[AGUARDE] 📸 O fundo da imagem está sendo removido.",
+            wait: "📸 Aguarde, o fundo da imagem está sendo removido.",
         },
         function: utilityFunctions.rbgCommand
     },
@@ -147,7 +147,7 @@ const utilityCommands = {
         `Ex: *{$p}efeitoaudio* reverso - Reverte o audio\n\n`+
         `*Obs*: Este comando funciona apenas com *AUDIOS*.\n`,
         msgs: {
-            error: "[❗] Houve um erro na conversão de audio"
+            error: "Houve um erro na conversão de audio."
         },
         function: utilityFunctions.efeitoaudioCommand
     },
@@ -214,7 +214,7 @@ const utilityCommands = {
             "*Artista*: {$2}\n"+
             "*Letra*:\n"+
             "{$3}",
-            error_not_found: 'A letra dessa música não foi encontrada'
+            error_not_found: 'A letra dessa música não foi encontrada.'
         },
         function: utilityFunctions.letraCommand
     },
@@ -232,7 +232,7 @@ const utilityCommands = {
         guide: `Ex: *{$p}calc* 8x8 - Exibe o resultado do cálculo.\n\n`+
         `Ex: *{$p}calc* 1mm em 1km - Exibe o resultado do conversão de medidas.\n`,
         msgs: {
-            reply: "🧮 *Calculadora*\n\n"+
+            reply: "➕➖ *Calculadora*\n\n"+
             "*Resultado*: {$1}",
             error_invalid_result: 'O cálculo não pode ser feito porque deu um valor inválido, verifique se não digitou nenhum caractere inválido para o cálculo.'
         },
@@ -245,7 +245,7 @@ const utilityCommands = {
             "*Você pesquisou por*: {$1}\n\n",
             reply_item: "*{$1}*\n"+
             "- *Link*: {$2}\n\n",
-            error_not_found: "Nenhum resultado foi encontrado para essa pesquisa"
+            error_not_found: "Nenhum resultado foi encontrado para essa pesquisa."
         },
         function: utilityFunctions.pesquisaCommand
     },
@@ -260,7 +260,7 @@ const utilityCommands = {
             reply_item: "- *Conversão*: {$1}\n"+
             "- *Valor convertido*: *{$2}* {$3}\n"+
             "- *Última atualização*: {$4}\n\n",
-            error_invalid_value: "O valor inserido não é um número válido"
+            error_invalid_value: "O valor inserido não é um número válido."
         },
         function: utilityFunctions.moedaCommand
     },
@@ -298,7 +298,7 @@ const utilityCommands = {
             reply: "📱 *Informação do DDD*\n\n"+
             "*Estado*: {$1}\n"+ 
             "*Região*: {$2}\n",
-            error_not_found: 'Nenhum resultado foi encontrado para esse DDD'
+            error_not_found: 'Nenhum resultado foi encontrado para esse DDD.'
         },
         function: utilityFunctions.dddCommand
     },
@@ -306,7 +306,7 @@ const utilityCommands = {
         guide: `Ex: Envie/responda uma imagem com *{$p}qualanime* - Procura o anime pela imagem.\n\n`+
         `*Obs*: Este comando funciona apenas com *IMAGENS* e deve ser uma *CENA VÁLIDA DE ANIME*, *NÃO* podendo ser imagens com *baixa qualidade*, *wallpappers*, *imagens editadas/recortadas*.\n`,
         msgs: {
-            wait: "⏳ Estou processando a imagem e pesquisando o anime.",
+            wait: "⏳ Aguarde, estou processando a imagem e pesquisando o anime.",
             error_similarity: "Nível de similaridade é muito baixo, certifique se enviar uma cena VÁLIDA de anime (Não funciona com imagens não oficiais, Wallpapers ou imagens recortadas e/ou baixa qualidade).",
             error_message: "Houve um erro ao obter os dados da mensagem",
             reply: "🔎 *Reconhecimento de anime*\n\n"+
@@ -315,7 +315,7 @@ const utilityCommands = {
             "*Tempo da cena*: {$3} - {$4}\n"+
             "*Similaridade*: {$5}%\n"+
             "*Prévia*: {$6}",
-            error_not_found: 'Nenhum anime compatível foi encontrado'
+            error_not_found: 'Nenhum anime compatível foi encontrado.'
         },
         function: utilityFunctions.qualanimeCommand
     }

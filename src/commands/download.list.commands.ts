@@ -4,41 +4,41 @@ const downloadCommands = {
     play: {
         guide: `Ex: *{$p}play* musica - Faz download de uma música do Youtube e envia como audio.\n`,
         msgs: {
-            wait: "[AGUARDE] 🎧 Sua música está sendo baixada e processada.\n\n"+
+            wait: "🎧 Aguarde, sua música está sendo baixada e processada.\n\n"+
             "*Título*: {$1}\n"+
             "*Duração*: {$2}",
             error_limit: "O vídeo deve ter no máximo *6 minutos*",
             error_live: "Esse vídeo não pode ser convertido em áudio, lives não são aceitas.",
-            error_not_found: "Nenhum áudio foi encontrado"
+            error_not_found: "Nenhum áudio foi encontrado."
         },
         function: downloadFunctions.playCommand
     },
     yt: {
         guide: `Ex: *{$p}yt* titulo - Faz download de um video do Youtube com o titulo digitado e envia.\n`,
         msgs: {
-            wait: "[AGUARDE] 🎥 Seu video está sendo baixado e processado.\n\n"+
+            wait: "🎥 Aguarde, seu video está sendo baixado e processado.\n\n"+
             "*Título*: {$1}\n"+
             "*Duração*: {$2}",
             error_limit: "O video deve ter no máximo *6 minutos*",
-            error_live: "Houve um erro de download, o bot não aceita download de lives.",
-            error_not_found: "Nenhum vídeo foi encontrado"
+            error_live: "Erro, o download de lives não é suportado.",
+            error_not_found: "Nenhum vídeo foi encontrado."
         },
         function: downloadFunctions.ytCommand
     },
     fb: {
         guide: `Ex: *{$p}fb* link - Faz download de um video do Facebook pelo link digitado e envia.\n`,
         msgs: {
-            wait: "[AGUARDE] 🎬 Sua mídia está sendo baixada e processada.\n\n"+
+            wait: "🎬 Aguarde, sua mídia está sendo baixada e processada.\n\n"+
             "*Título*: {$1}\n"+
             "*Duração*: {$2}",
-            error_limit: "O video deve ter no máximo *6 minutos*"
+            error_limit: "O video deve ter no máximo *6 minutos.*"
         },
         function: downloadFunctions.fbCommand
     },
     ig: {
         guide: `Ex: *{$p}ig* link - Faz download de videos/fotos do Instagram pelo link digitado e envia.\n`,
         msgs: {
-            wait: "[AGUARDE] 🎬 Sua mídia está sendo baixada e processada.\n\n"+
+            wait: "🎬 Aguarde, sua mídia está sendo baixada e processada.\n\n"+
             "*Autor*: {$1} (@{$2})\n"+
             "*Descrição*: {$3}\n"+
             "*Likes*: {$4}",
@@ -48,19 +48,19 @@ const downloadCommands = {
     x: {
         guide: `Ex: *{$p}x* link - Faz download de um video/imagem do X pelo link digitado e envia.\n`,
         msgs: {
-            wait: "[AGUARDE] 🎬 Sua mídia está sendo baixada e processada.\n\n"+
+            wait: "🎬 Aguarde, sua mídia está sendo baixada e processada.\n\n"+
             "*Postagem*: {$1}",
-            error_not_found: 'Não foi encontrada nenhuma mídia, verifique o link'
+            error_not_found: 'Não foi encontrada nenhuma mídia, verifique o link.'
         },
         function: downloadFunctions.xCommand
     },
     tk: {
         guide: `Ex: *{$p}tk* link - Faz download de um video do Tiktok pelo link digitado e envia.\n`,
         msgs: {
-            wait: "[AGUARDE] 🎬 Sua mídia está sendo baixada e processada.\n\n"+
+            wait: "🎬 Aguarde, sua mídia está sendo baixada e processada.\n\n"+
             "*Perfil*: @{$1}\n"+
             "*Descrição*: {$2}",
-            error_not_found: 'Não foi encontrada nenhuma mídia, verifique o link'
+            error_not_found: 'Não foi encontrada nenhuma mídia, verifique o link.'
         },
         function: downloadFunctions.tkCommand
     },
